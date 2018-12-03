@@ -4,6 +4,7 @@ import { store, getAllRappers, init, getEveryRapper } from './Redux/index';
 import Axios from 'axios';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
+import {Table} from 'react-bootstrap';
 
 class Homepage extends Component {
     constructor(props) {
@@ -20,20 +21,51 @@ setTimeout(() => {
 
     render() {
         return (
+            <div>
+                <h1 className='title'>SupaHotFire</h1>
             <div className="test">
-                <ul>
                     {this.props.allRappers ? this.props.allRappers.map(rapper =>
                         <ul key={rapper.id}>
-                        <h1> Name: {rapper.name}</h1>
-                        <h3>Active: {rapper.active.toString()}</h3>
-                        <h3>Birthday: {rapper.birthday}</h3>
-                        <h3>Songs</h3>
-                        <h3>{rapper.songs.map(song => 
-                            <p>{song}</p>
-                            )}</h3>
+                        <h3> Name: {rapper.name}</h3>
+                        <h5>Active: {rapper.active.toString()}</h5>
+                        <h5>Birthday: {rapper.birthday}</h5>
+                        <h5>Songs</h5>
+                        <h5>{rapper.songs.map(song => 
+                            <li>{song}</li>
+                            )}</h5>
                         </ul>
                     ): ''}
-                </ul>
+
+                    <Table striped bordered condensed hover>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td colSpan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</Table>;
+            </div>
             </div>
         )
     }

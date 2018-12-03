@@ -1,9 +1,15 @@
 body {
   background-color: lightsteelblue
 }
-
-.test {
+.title {
   color: firebrick;
+  display: grid;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.test {
+  color: black;
   display: flex;
-  justify-content: center;  
+  justify-content: center; 
+  flex-wrap: wrap; 
 }

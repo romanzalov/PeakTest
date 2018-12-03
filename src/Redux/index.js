@@ -8,7 +8,6 @@ const GET_ALL_RAPPERS = 'GET_ALL_RAPPERS';
 //action creators
 export const init = allRappers => ({ type: GET_ALL_RAPPERS, result: allRappers })
 
-
 //Thunk Creator
 export function getAllRappers() {
     // thunk
@@ -20,7 +19,6 @@ export function getAllRappers() {
                 dispatch(action);
             })
     }
-
 }
 
 // initial state of the store
