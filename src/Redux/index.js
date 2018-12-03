@@ -1,3 +1,4 @@
+
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import Axios from 'axios';
@@ -17,7 +18,9 @@ export function getAllRappers() {
             .then(rappers => {
                 const action = init(rappers);
                 dispatch(action);
-            })
+            }
+            )
+            .catch(error => console.log('This is the error' + error))
     }
 }
 
@@ -43,3 +46,4 @@ export const store = createStore(
     rootReducer,
     applyMiddleware(thunk)
 )
+

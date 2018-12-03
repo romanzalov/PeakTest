@@ -5,11 +5,12 @@ body {
   color: firebrick;
   display: grid;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
-.test {
+.table-body {
   color: black;
   display: flex;
   justify-content: center; 
-  flex-wrap: wrap; 
+  margin-right: 2rem;
+  margin-left: 2rem;
 }
